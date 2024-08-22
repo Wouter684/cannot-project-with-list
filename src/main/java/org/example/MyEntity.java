@@ -19,4 +19,7 @@ public class MyEntity extends PanacheEntity {
     @Column(name = "collection_item")
     public List<String> myCollection;
 
+    @OneToMany(mappedBy = "myEntity", cascade = PERSIST, orphanRemoval = true)
+    public List<MyRelatedEntity> myRelatedEntities;
+
 }
